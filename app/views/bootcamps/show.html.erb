@@ -1,0 +1,88 @@
+<div class="row">
+  <div class="large-5 columns"><hr style="border-top: 2px dashed grey; color: #FFFCF4; margin-top:100px; width:90%"></div>
+    <div class="large-2 columns">
+      <img id="bootcamplogo" src=<%= image_path(@bootcamp.name.downcase.gsub(" ", "-")+'.png') %> style="margin-left:-15px" >
+    </div>
+  <div class="large-5 columns"><hr style="border-top: 2px dashed grey; height:75px; margin-top:100px; color:#FFFCF4"></div>
+</div>
+<div class="row">
+  <div class="large-6 columns">
+    <h3><%= @bootcamp.name %></h3>
+    <p><%= @bootcamp.description %></p>
+    </div>
+  <div class="large-4 columns">
+    <div id="quickfactbox" style="padding:15px">
+    <h3>Quick Facts</h3>
+    <ul><li>Primary Language: <%= @bootcamp.primary_language %></li>
+    <li>Tuition: <%= h number_to_currency @bootcamp.tuition, :precision => 0 %></li>
+    <li>Hours: <%= @bootcamp.hours %></li></ul>
+      <% if @bootcamp.tags.count != 0 %>
+      <h3>Other Topics</h3>
+      <% @bootcamp.tags.each do |t| %>
+      <%= t.name %>
+      <% end %>
+      <% end %>
+      </div>
+    </div>
+</div>
+
+
+<div class="row">
+  <div id ="contactbox" class="large-4 columns">
+  <h4>Contact Info</h4>
+  <p id="bcaddress"><%= @bootcamp.address %>, <%= @bootcamp.city %></p>
+  <p id="bclink"><a href=<%= @bootcamp.website_url %>><%= @bootcamp.website_url %></a></p>
+  <a href="http://www.twitter.com/<%= @bootcamp.twitter_handle.gsub("@","") %>"><img src=<%= image_path('webicon-twitter.svg')%>  width="50px"></a>
+  <a href="mailto:<%= @bootcamp.contact_email %>"><img src=<%= image_path('webicon-mail.svg')%>  width="50px"></a>
+
+
+  </div>
+  <div id="gmapbox" class="large-3 columns">
+    <a href="http://maps.google.com/?q=<%= @bootcamp.address %>,<%= @bootcamp.city %>,<%= @bootcamp.st_pr %>"><%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@bootcamp.lat},#{@bootcamp.lon}&zoom=15&size=400x400&sensor=false&markers=color:blue%7Clabel:#{@bootcamp.name}%7C#{@bootcamp.lat},#{@bootcamp.lon}&visual_refresh=true" %></a>
+  </div>
+
+    <div id="tweetbox" class="large-4 columns">
+    <h4 id="twitterings"><%= @bootcamp.twitter_handle %> tweets</h4>
+    <% if @bootcamp.tweets.count != 0 %>
+    <span id="bigquotes-open">"</span><% @bootcamp.tweets.limit(5).each do |tweet| %>
+    </span>
+    <p class="tweettext"><%=tweet.status %></p>
+    <% end %><span id="bigquotes-close">"</span>
+    <% else %>
+    <p class="tweettext">Sorry, we dont have any recent tweets for this program.</p>
+    <% end %>
+    </div>
+
+</div>
+
+
+<div class="row">
+  <div class ="large-12 columns centered">
+<button class="small"><%= link_to("Back to BootCamp Directory", bootcamps_url) %></button>
+<button class="small"><%= link_to("Home", )  %></button>
+</div>
+</div>
+
+<style>
+
+#twitterings {margin-bottom:-70px;}
+.tweettext {font-size:.9em;}
+
+#bigquotes-open, #bigquotes-close {
+  font-family:"Times New Roman";
+  font-size:5em;
+  color:green;
+  opacity:.5;
+  display:inline;
+  position:relative;
+  top:-20px;
+}
+
+#bigquotes-open {margin-left:-20px;margin-top:-20px;}
+#bigquotes-close {margin-left:270px;margin-top:-10px;-webkit-transform: rotate(100deg);
+-moz-transform: rotate(100deg);
+-o-transform: rotate(100deg);
+-ms-transform: rotate(100deg);
+};}
+
+</style>

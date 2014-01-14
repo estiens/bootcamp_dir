@@ -1,0 +1,206 @@
+$dark_grey:#3C3B37;
+$off_white: #FFFCF4;
+$orange:#FD8C3D;
+$lime_green:#74E149;
+$light_brown:#FFD2AB;
+$dark_brown:#7F4018;
+$light_grey:#ccc;
+
+
+// $h1_color: #323232;
+$h2_color: #4B4B4B;
+$h3_color: #4B4B4B;
+$h4_color: #292929;
+$h5_color: #4B4B4B;
+
+$h1_color:$orange;
+$h2_color:$orange;
+$h3_color:$orange;
+$h4_color:$dark_grey;
+
+// $text_color: #6B6B6B;
+$text_color:$dark-grey;
+$link_color: $orange;
+
+$font_size: 22px;
+
+// Lockitron uses ProximaNova Regular, but that costs money, so we're defaulting to Helveitca Neue instead.
+$primary_font:   "Helvetica Neue";
+$secondary_font: "American Typewriter";
+$tertiary_font:  "American Typewriter";
+
+.alert {
+  padding: 10px;
+  color: black;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+// #main {
+//   min-height: 400px;
+// }
+
+.content_box {
+  padding: 30px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  background: $off-white;
+}
+
+html, body, #main{
+  background-color:$off-white;
+}
+h1 {
+  margin: 0 auto;
+  font-family: $secondary_font;
+  font-size: 42px;
+  font-weight: bold;
+  color: $h1_color;
+  letter-spacing: -.05em;
+  a {
+    color: $h1_color;
+    text-decoration: none;
+    &:hover {
+      color: $h1_color;
+      text-decoration: none;
+    }
+  }
+}
+
+h2 {
+  font-family: $secondary_font, $tertiary_font, $primary_font;
+  font-size: 45px;
+  color: $h2_color;
+  margin-bottom: 10px;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-family: $secondary_font, $tertiary_font, $primary_font;
+  font-size: 30px;
+  color: $h3_color;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+
+h4 {
+  font-family: $secondary_font, $tertiary_font, $primary_font;
+  font-size: 20px;
+  color: $h4_color;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+
+h5 {
+  font-family: $secondary_font, $tertiary_font, $primary_font;
+  margin-bottom: 10px;
+  color: $h5_color;
+  font-weight: normal;
+}
+
+p {
+  font-family: $primary_font, "Helvetica Neue", "Helvetica";
+  color: $dark_grey;
+  font-size: 18px;
+  line-height: 1.5;
+  text-shadow: 0 1px 0px #fff;
+}
+
+.center {
+  text-align: center;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.loader {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: image-url('loading.gif');
+}
+
+#errors p{
+  color: red;
+  font-size: 14px;
+}
+
+select.error {
+  border-color: #b94a48;
+}
+
+#share_buttons {
+
+  position: relative;
+  .like {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+
+  .tweet {
+    position: absolute;
+    top: 0px;
+    left: 110px;
+  }
+
+  .pin {
+    position: absolute;
+    top: 0px;
+    left: 225px;
+  }
+}
+
+/* Time Picker */
+.ui-datepicker {font-size: 12px}
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; }
+.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
+.ui-datepicker-current { display:none!important;}
+
+/* Powered by callout below the footer */
+#powered {
+  padding: 20px;
+  background: #ccc;
+  text-align: center;
+  a {
+    color: black;
+    text-decoration: none;
+    &:hover {
+      color: gray;
+    }
+  }
+}
+
+/* Buttons */
+
+button {background-color:$dark_brown;
+font-family:$secondary_font, $tertiary_font, $primary_font;
+font-weight:200;
+color:$orange;
+border-radius:10px;}
+
+button:hover{
+  background-color: $dark_grey;
+  color:$lime_green;
+}
+
+a {
+  color:$dark_brown;
+}
+
+a:hover{
+  color:$lime_green;
+}
+
